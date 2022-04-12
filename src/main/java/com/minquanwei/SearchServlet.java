@@ -1,6 +1,4 @@
 package com.minquanwei;
-
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -17,7 +15,7 @@ public class SearchServlet extends HttpServlet {
             response.sendRedirect("index.jsp");
         }else{
             if (search.equals("baidu")){
-                response.sendRedirect("https://www.baidu.com/search?q="+text);
+                response.sendRedirect("https://www.baidu.com/s?wd="+text);
             }else if (search.equals("bing")){
                 response.sendRedirect("https://cn.bing.com/search?q="+text);
             }else if (search.equals("google")){
@@ -31,5 +29,4 @@ public class SearchServlet extends HttpServlet {
 
     }
 }
-
 
