@@ -56,7 +56,41 @@ public class LoginServlet extends HttpServlet {
             User user = userDao.findByUsernamePassword(conn,username,password);
             if (user != null){
                 //valid
-                request.setAttribute("user",user);//so can get user info in jsp
+                /*//week8 code:demo#1 use cookie for session
+                //create a cookie
+                //step1:create an object of cookie class
+                Cookie cookie = new Cookie("sessionId",""+user.getId());//sessionId = userId
+                //step2:set age of cookie
+                cookie.setMaxAge(10*60);//10 minutes
+                //step3:add cookie into response
+                response.addCookie(cookie);*/
+
+                //week 8 exercise#2:add code for rememberMe
+                String rememberMe = request.getParameter("rememberMe");
+                if (rememberMe != null && rememberMe.equals("1")){
+                    //want to rememberMe
+                    //create 3 cookies
+                    Cookie usernameCookie = new Cookie("cUsername",user.getUsername());
+                    Cookie passwordCookie = new Cookie("cPassword",user.getPassword());
+                    Cookie rememberMeCookie = new Cookie("cRememberMe",rememberMe);
+                    //set age of cookies
+                    usernameCookie.setMaxAge(5);//5 second
+                    passwordCookie.setMaxAge(5);
+                    rememberMeCookie.setMaxAge(5);
+                    //add cookies into response
+                    response.addCookie(usernameCookie);
+                    response.addCookie(passwordCookie);
+                    response.addCookie(rememberMeCookie);
+                }
+
+                //week 8 exercise#1:create a session
+                HttpSession session = request.getSession();//create a new session if not exist otherwise return existing session
+                /*//check session id
+                System.out.println("session id-->"+session.getId());*/
+                //set time for session
+                session.setMaxInactiveInterval(10*60);//for 10 minutes if request not come,tomcat kill session
+                //change request(one page) to session - so we can get session attribute in many jsp page
+                session.setAttribute("user",user);//set user info into session
                 request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request,response);
             }else{
                 //invalid
