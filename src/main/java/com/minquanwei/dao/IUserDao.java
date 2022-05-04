@@ -1,5 +1,5 @@
-package com.minquanwei;
-import com.minquanwei.User;
+package com.minquanwei.dao;
+import com.minquanwei.model.User;
 
 import java.sql.Connection;
 import java.sql.SQLException;

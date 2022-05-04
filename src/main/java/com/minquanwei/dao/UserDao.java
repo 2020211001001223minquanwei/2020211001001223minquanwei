@@ -1,5 +1,6 @@
-package com.minquanwei;
-import com.minquanwei.User;
+package com.minquanwei.dao;
+import com.minquanwei.dao.IUserDao;
+import com.minquanwei.model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +9,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
-public class UserDao implements IUserDao{
+public class UserDao implements IUserDao {
     @Override
     public boolean saveUser(Connection con, User user) throws SQLException {
         //insert into Users

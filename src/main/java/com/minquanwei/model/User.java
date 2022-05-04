@@ -1,4 +1,4 @@
-package com.minquanwei;
+package com.minquanwei.model;
 
 import java.util.Date;
 

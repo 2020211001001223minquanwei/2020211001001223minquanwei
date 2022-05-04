@@ -1,4 +1,4 @@
-package com.minquanwei;
+package com.minquanwei.controller;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

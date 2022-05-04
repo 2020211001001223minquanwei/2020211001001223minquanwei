@@ -1,6 +1,6 @@
-package com.minquanwei;
-import com.minquanwei.UserDao;
-import com.minquanwei.User;
+package com.minquanwei.controller;
+import com.minquanwei.dao.UserDao;
+import com.minquanwei.model.User;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

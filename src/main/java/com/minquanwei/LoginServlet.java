@@ -1,13 +1,12 @@
 package com.minquanwei;
 
-import com.minquanwei.UserDao;
-import com.minquanwei.User;
+import com.minquanwei.dao.UserDao;
+import com.minquanwei.model.User;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.*;
 
 @WebServlet(
