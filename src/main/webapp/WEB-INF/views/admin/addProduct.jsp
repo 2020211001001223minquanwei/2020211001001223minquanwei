@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="../header.jsp"%>
 
 <div id="contact-page" class="container">
@@ -38,8 +37,15 @@
                             <option >-- Category --</option>
                             <!-- loop_start -->
 
-                            <option value=""></option>
-
+                            <!-- later we will make it dynamic -->
+                            <option value="1">FASHION</option>
+                            <option value="2">HOUSEHOLD</option>
+                            <option value="3">INTERIORS</option>
+                            <option value="4">CLOTHING</option>
+                            <option value="5">BAGS</option>
+                            <option value="6">SHOES</option>
+                            <option value="7">BOOKS</option>
+                            <option value="8">OTHER</option>
                             <!-- loop_end -->
 
                         </select>
@@ -58,3 +64,5 @@
             </div>
         </div>
     </div>
+</div>
+<%@include file="../footer.jsp"%>
