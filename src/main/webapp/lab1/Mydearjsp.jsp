@@ -16,5 +16,11 @@ name:<%=request.getParameter("name")%><br>
 submit:<%=request.getParameter("send")%><br>
 class:<%=request.getParameter("classname")%><br>
 id:<%=request.getParameter("id")%><br>
+
+<h2>Using EL flag to get value:</h2>
+name:${param.name}<br>
+submit:${param.send}<br>
+class:${param.classname}<br>
+id:${param.id}<br>
 </body>
-</html
+</html>
